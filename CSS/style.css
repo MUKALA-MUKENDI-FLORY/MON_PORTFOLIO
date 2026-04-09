@@ -221,3 +221,643 @@ footer a:hover {
     color: var(--orange-vif);
     transform: translateY(-3px);
 }
+
+/* Styles Généraux */
+:root {
+    --primary-color: #6366f1; /* Le violet du design */
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #f9fafb;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Nav */
+header {
+    background-color: var(--white);
+    padding: 20px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+/* Titre de section */
+.projects-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.underline {
+    width: 50px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 0 auto 50px;
+    border-radius: 2px;
+}
+
+/* Grille de projets */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 25px;
+    text-align: left;
+    flex-grow: 1;
+    border-top: 4px solid var(--primary-color);
+}
+
+.project-content h3 {
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.project-content p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    min-height: 45px;
+}
+
+/* Tags */
+.tags {
+    margin-bottom: 20px;
+}
+
+.tag {
+    background: #eef2ff;
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+/* Liens du projet */
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.project-links a:hover {
+    color: var(--primary-color);
+}
+
+.project-links a.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin: 0 15px;
+    transition: opacity 0.3s;
+}
+
+.social-icons a:hover {
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 20px;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+}
+
+/* --- SECTION CONTACT --- */
+.contact-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-title {
+    color: var(--violet-doux);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.underline {
+    background-color: var(--violet-doux);
+    height: 4px;
+    width: 45px;
+    border-radius: 10px;
+    margin: 0 auto 50px;
+}
+
+/* GRILLE DE CONTACT */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: var(--gris-tres-clair);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--gris-clair);
+    align-items: stretch;
+    text-align: left;
+}
+
+/* INFOS GAUCHE */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-info h3 {
+    color: var(--violet-fonce);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    color: var(--gris-fonce);
+    margin-bottom: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: var(--gris-tres-fonce);
+}
+
+.info-item i {
+    color: var(--violet-doux);
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* BOUTONS RESEAUX (Alignés en bas) */
+.social-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+.btn-social:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+.whatsapp { background-color: #25D366; }
+.telegram { background-color: #0088cc; }
+
+/* FORMULAIRE DROITE */
+.contact-form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group label {
+    color: var(--gris-tres-fonce);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input {
+    background-color: var(--gris-tres-clair);
+    border: 2px solid transparent;
+    padding: 14px;
+    border-radius: 10px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--violet-doux);
+    background-color: white;
+    outline: none;
+}
+
+/* BOUTON ENVOYER ORANGE */
+.btn-submit.vif {
+    background-color: var(--orange-vif);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-submit.vif:hover {
+    background-color: #e6961f;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .contact-grid { grid-template-columns: 1fr; padding: 20px; }
+    .social-contact { grid-template-columns: 1fr; }
+}
+/* BOUTON ENVOYER (Orange) */
+.btn-submit.vif {
+    background-color: var(--orange-vif);
+    color: white;
+    padding: 16px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.btn-submit.vif:hover {
+    background-color: #e6961f;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur tablette/mobile */
+        padding: 20px;
+    }
+    
+    .social-contact {
+        grid-template-columns: 1fr; /* Boutons l'un sur l'autre sur mobile */
+    }
+}
+
+:root {
+    --violet-doux: #6C63FF;
+    --violet-fonce: #534EDD;
+    --orange-vif: #FFA726;
+    --gris-tres-fonce: #333;
+    --gris-fonce: #666;
+    --gris-tres-clair: #F8F8F8;
+    --gris-clair: #EEE;
+}
+
+.passions-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-title {
+    color: var(--violet-doux);
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.underline {
+    width: 40px;
+    height: 4px;
+    background-color: var(--violet-doux);
+    margin: 0 auto 50px;
+    border-radius: 10px;
+}
+
+.passions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.passion-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.passion-card:hover {
+    transform: translateY(-8px);
+}
+
+.passion-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.passion-content {
+    padding: 20px;
+    text-align: left;
+    border-top: 4px solid var(--violet-doux);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.passion-content h3 {
+    color: var(--violet-doux);
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.passion-content p {
+    color: var(--gris-fonce);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* --- ALIGNEMENT STYLE PROJET (GITHUB & DEMO) --- */
+.passion-links {
+    display: flex;
+    justify-content: space-between; /* Un à gauche, un à droite */
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid var(--gris-clair);
+}
+
+.passion-links a {
+    text-decoration: none;
+    color: var(--gris-tres-fonce);
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s;
+}
+
+/* Icônes violettes comme sur la page projet */
+.passion-links a i {
+    color: var(--violet-doux);
+    font-size: 0.95rem;
+}
+
+.passion-links a:hover {
+    color: var(--violet-doux);
+}
+
+/* --- Base Footer & Responsive --- */
+footer { background: var(--violet-doux); color: white; padding: 40px; text-align: center; margin-top: 60px;}
+.social-icons a { color: white; margin: 0 10px; font-size: 1.3rem;}
+
+@media (max-width: 900px) {
+    .passions-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+    .passions-grid { grid-template-columns: 1fr; }
+}
+:root {
+    --violet-doux: #6C63FF;
+    --violet-fonce: #534EDD;
+    --orange-vif: #FFA726;
+    --gris-tres-fonce: #333;
+    --gris-fonce: #666;
+    --gris-tres-clair: #F8F8F8;
+    --gris-clair: #EEE;
+}
+
+/* --- SECTION DIVERTISSEMENT --- */
+.ent-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.ent-section .underline {
+    background-color: var(--violet-doux);
+    height: 4px;
+    width: 45px;
+    border-radius: 10px;
+    margin: 0 auto 50px;
+}
+
+.ent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.ent-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.ent-card:hover {
+    transform: translateY(-8px);
+}
+
+.ent-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+/* LA BARRE VIOLETTE APRES PHOTO */
+.ent-content {
+    padding: 20px;
+    text-align: left;
+    border-top: 4px solid var(--violet-doux);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ent-content h3 {
+    color: var(--violet-doux);
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.ent-content p {
+    color: var(--gris-fonce);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* --- ALIGNEMENT DES SYMBOLES (STYLE PROJET) --- */
+.ent-links {
+    display: flex;
+    justify-content: space-between; /* Un à gauche, un à droite */
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid var(--gris-clair);
+}
+
+.ent-links a {
+    text-decoration: none;
+    color: var(--gris-tres-fonce);
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s;
+}
+
+.ent-links a i {
+    color: var(--violet-doux);
+    font-size: 0.95rem;
+}
+
+.ent-links a:hover {
+    color: var(--violet-doux);
+}
+
+/* --- Base Footer & Responsive --- */
+footer { background: var(--violet-doux); color: white; padding: 40px; text-align: center; margin-top: 60px;}
+.social-icons a { color: white; margin: 0 10px; font-size: 1.3rem;}
+
+@media (max-width: 900px) {
+    .ent-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+    .ent-grid { grid-template-columns: 1fr; }
+}
